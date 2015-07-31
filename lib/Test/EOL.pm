@@ -24,6 +24,8 @@ my %file_find_arg = ($] <= 5.006) ? () : (
 my $Test  = Test::Builder->new;
 my $updir = File::Spec->updir();
 
+my $no_plan;
+
 sub import {
     my $self   = shift;
     my $caller = caller;
@@ -33,6 +35,11 @@ sub import {
         *{$caller.'::all_perl_files_ok'} = \&all_perl_files_ok;
     }
     $Test->exported_to($caller);
+
+    if ($_[0] && $_[0] eq 'no_plan') {
+        shift;
+        $no_plan = 1;
+    }
     $Test->plan(@_);
 }
 
@@ -167,6 +174,7 @@ sub _module_to_path {
 }
 
 sub _make_plan {
+    return if $no_plan;
     unless ($Test->has_plan) {
         $Test->plan( 'no_plan' );
     }
@@ -214,6 +222,13 @@ or
 
   use Test::EOL;
   all_perl_files_ok({ trailing_whitespace => 1 }, @mydirs );
+
+or
+
+  use Test::More;
+  use Test::EOL 'no_test';
+  all_perl_files_ok();
+  done_testing;
 
 =head1 DESCRIPTION
 
