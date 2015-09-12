@@ -22,7 +22,6 @@ my %file_find_arg = ($] <= 5.006) ? () : (
 );
 
 my $Test  = Test::Builder->new;
-my $updir = File::Spec->updir();
 
 my $no_plan;
 
@@ -245,8 +244,8 @@ if you don't export anything, such as for a purely object-oriented module.
   all_perl_files_ok( [ \%options ], [ @directories ] )
 
 Applies C<eol_unix_ok()> to all perl files found in C<@directories> (and sub
-directories). If no <@directories> is given, the starting point is one level
-above the current running script, that should cover all the files of a typical
+directories). If no <@directories> is given, the starting point is the current
+working directory, as tests are usually run from the top directory in a typical
 CPAN distribution. A perl file is *.pl or *.pm or *.t or a file starting
 with C<#!...perl>
 

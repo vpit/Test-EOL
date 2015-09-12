@@ -2,6 +2,9 @@ Revision history for Test-EOL
 
 {{$NEXT}}
 
+  - Update documentation for starting point change in version 1.5
+    (Dagfinn Ilmari Mannsåker)
+
 1.6       2015-07-30 21:51:00-07:00 America/Los_Angeles
   - Add 'no_test' import option to allow more composability
     (Arthur Axel fREW Schmidt)
