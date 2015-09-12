@@ -45,14 +45,16 @@ $inc = "-I $inc" if $inc;
 
 sub run_ok {
     my ($code, $match, $test_name) = @_;
-    my $line = (caller)[2];
-    die "code containing double quotes is not portable on Win32 in one-liners" if $code =~ /"/;
+    my (undef, $file, $line) = caller;
+    die "code containing double quotes is not portable on Win32 in one-liners at $file $line.\n" if $code =~ /"/;
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     my (undef, $outfile) = tempfile();
-    is( `$perl $inc -MTest::EOL -e "$code" > $outfile 2>&1`, '', "test sub program at line $line: output redirected" );
-    is( $? >> 8, 1, "test sub program at line $line: exit code is 1" );
+    is( `$perl $inc -MTest::EOL -e "$code" > $outfile 2>&1`, '', "test sub program: output redirected" );
+    is( $? >> 8, 1, "test sub program: exit code is 1" );
     local $/ = undef;
-    open my $fh, '<', $outfile or die $!;
+    open my $fh, '<', $outfile or die "Can't open $outfile: $!";
     my $content = <$fh>;
+    close $fh or die "Can't close $outfile: $!";
     like( $content, $match, $test_name );
     unlink $outfile;
 }
