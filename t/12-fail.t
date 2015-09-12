@@ -31,7 +31,7 @@ $inc = "-I $inc" if $inc;
 {
     my ($dir, $file) = make_bad_file_3();
     run_ok( "all_perl_files_ok( '$file' )",
-            qr/^not ok 1 - No incorrect line endings in '[^']*' \Qon line 1: [\r] /m,
+            qr/^not ok 1 - No incorrect line endings in '[^']*' \Qon line 1: [\r]/m,
             'windows EOL found in tmp file 3' );
 }
 
