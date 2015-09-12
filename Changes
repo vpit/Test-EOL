@@ -4,6 +4,8 @@ Revision history for Test-EOL
 
   - Update documentation for starting point change in version 1.5
     (Dagfinn Ilmari Mannsåker)
+  - Check *.pod files as well as *.pm, *.pl and *.t (RT#82032)
+    (Dagfinn Ilmari Mannsåker)
 
 1.6       2015-07-30 21:51:00-07:00 America/Los_Angeles
   - Add 'no_test' import option to allow more composability

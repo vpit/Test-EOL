@@ -44,7 +44,7 @@ sub import {
 
 sub _all_perl_files {
     my @all_files = _all_files(@_);
-    return grep { _is_perl_module($_) || _is_perl_script($_) } @all_files;
+    return grep { _is_perl_module($_) || _is_perl_script($_) || _is_pod_file($_) } @all_files;
 }
 
 sub _all_files {
@@ -149,6 +149,10 @@ sub _is_perl_module {
     $_[0] =~ /\.pm$/i || $_[0] =~ /::/;
 }
 
+sub _is_pod_file {
+    $_[0] =~ /\.pod$/i;
+}
+
 sub _is_perl_script {
     my $file = shift;
     return 1 if $file =~ /\.pl$/i;
@@ -246,7 +250,7 @@ if you don't export anything, such as for a purely object-oriented module.
 Applies C<eol_unix_ok()> to all perl files found in C<@directories> (and sub
 directories). If no <@directories> is given, the starting point is the current
 working directory, as tests are usually run from the top directory in a typical
-CPAN distribution. A perl file is *.pl or *.pm or *.t or a file starting
+CPAN distribution. A perl file is *.pl or *.pm or *.pod or *.t or a file starting
 with C<#!...perl>
 
 Valid C<\%options> currently are:
