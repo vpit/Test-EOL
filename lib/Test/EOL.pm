@@ -11,11 +11,9 @@ use File::Spec;
 use File::Find;
 use Cwd qw/ cwd /;
 
-use vars qw( $PERL $UNTAINT_PATTERN $PERL_PATTERN);
-
-$PERL    = $^X || 'perl';
-$UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
-$PERL_PATTERN     = qr/^#!.*perl/;
+our $PERL    = $^X || 'perl';
+our $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
+our $PERL_PATTERN     = qr/^#!.*perl/;
 
 my %file_find_arg = ($] <= 5.006) ? () : (
     untaint => 1,
