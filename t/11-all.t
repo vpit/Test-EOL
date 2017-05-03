@@ -1,4 +1,5 @@
 use strict;
+use warnings;
 
 use Test::EOL;
 use FindBin qw/$Bin/;

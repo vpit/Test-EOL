@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 # Check that our own source is clean
 use Test::EOL;
 use Cwd;
