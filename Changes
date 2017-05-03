@@ -1,5 +1,7 @@
 Revision history for Test-EOL
 
+{{$NEXT}}
+
 2.00      2017-05-03 22:38:59Z
   - Update documentation for starting point change in version 1.5
   - Check *.pod files as well as *.pm, *.pl and *.t (RT#82032)
