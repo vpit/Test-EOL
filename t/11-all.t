@@ -2,11 +2,10 @@ use strict;
 use warnings;
 
 use Test::EOL;
-use FindBin qw/$Bin/;
 
 use File::Temp qw( tempdir tempfile );
 
-all_perl_files_ok("$Bin/../lib");
+all_perl_files_ok("lib");
 
 eol_unix_ok( $0, "$0 is unix eol" );
 
