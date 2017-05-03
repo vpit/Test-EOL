@@ -77,7 +77,7 @@ sub make_raw_badfile {
 
 sub make_bad_file_1 {
   my $tmpdir = tempdir( CLEANUP => 1 );
-  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pL' );
+  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pl' );
   binmode $fh, ':raw';
   my $str = <<"DUMMY";
 #!perl
@@ -94,7 +94,7 @@ DUMMY
 
 sub make_bad_file_2 {
   my $tmpdir = tempdir( CLEANUP => 1 );
-  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pL' );
+  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pl' );
   binmode $fh, ':raw';
   print $fh <<"DUMMY";
 #!perl
@@ -103,7 +103,7 @@ sub make_bad_file_2 {
 
 =head1 NAME
 
-test.pL -	A test script
+test.pl -	A test script
 \r\r\r\r\r\r\r\r
 =cut
 
@@ -138,7 +138,7 @@ DUMMY
 
 sub make_bad_file_4 {
   my $tmpdir = tempdir( CLEANUP => 1 );
-  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pL' );
+  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pl' );
   binmode $fh, ':raw';
   print $fh <<'DUMMY';
 #!perl
@@ -147,7 +147,7 @@ sub make_bad_file_4 {
 
 =head1 NAME
 
-test.pL -	A test script
+test.pl -	A test script
 
 =cut
 

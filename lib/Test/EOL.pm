@@ -286,7 +286,7 @@ the total number of files tested must be specified.
   eol_unix_ok ( $file [, $text] [, \%options ] )
 
 Run a unix EOL check on C<$file>. For a module, the path (lib/My/Module.pm) or the
-name (My::Module) can be both used. C<$text> is the diagnostic label emited after
+name (My::Module) can be both used. C<$text> is the diagnostic label emitted after
 the C<ok>/C<not ok> TAP output. C<\%options> takes the same values as described in
 L</all_perl_files_ok>.
 
