@@ -1,10 +1,6 @@
-Test-EOL*
-META.yml
-Makefile
-blib
-inc
-pm_to_blib
-MANIFEST
-MANIFEST.bak
-Makefile.old
-.build/
+/.ackrc
+/.build/
+!/.gitignore
+/.latest
+/Test-EOL-*/
+/Test-EOL-*.tar.gz

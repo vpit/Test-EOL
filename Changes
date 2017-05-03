@@ -5,7 +5,7 @@ Revision history for Test-EOL
   - Check *.pod files as well as *.pm, *.pl and *.t (RT#82032)
   - repository has moved to GitHub
 
-1.6       2015-07-30 21:51:00-07:00 America/Los_Angeles
+1.6       2015-07-31 04:51:00Z
   - Add 'no_test' import option to allow more composability
     (Arthur Axel fREW Schmidt)
 
@@ -21,7 +21,7 @@ Revision history for Test-EOL
 1.3 2012-06-15
    - Fix to ignore inc/ directory used by Module::Install.
 
-1.2
+1.2 2012-06-14
    - Fix bad regex matching directories containing 'svn', not just .svn'
      directories. RT#75968
 

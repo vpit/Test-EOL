@@ -4,6 +4,8 @@ package Test::EOL;
 use strict;
 use warnings;
 
+our $VERSION = '2.00';
+
 use Test::Builder;
 use File::Spec;
 use File::Find;
